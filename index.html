@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/project-common-css.css">
+    <link rel="stylesheet" href="css/desimal-to-fraction-calculator.css">
+    <title>Fraction Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Fraction Calculator</h1>
+        <div class="container-feild-group">
+            <div class="container-feild">             
+                
+                <div class="input-group">
+                    <input placeholder="Enter a decimal number"  type="number"  min="0" id="inputNumber" class="input-feild">
+                </div>
+                
+                <div class="input-group">
+                    <button onclick="FractionCalculatorReset()" id="btnReset" class="btn btn-reset">Reset</button>
+                    <button onclick="FractionCalculation()" id="btnCalculator" class="btn btn-calculate">Calculate</button>
+                </div> 
+            </div>
+
+            <div class="container-feild">              
+                
+                <div id="OutputInfo" class="output-information output-box">
+                    <ul>
+                        <li>You have to input a decimal number.</li>
+                    </ul>
+                </div>
+                
+                <div id="OutputResult" class="output-results output-box">
+                    <h2>Result</h2>
+                    <table class="output-table">
+                        <tr>
+                            <td>Fraction Number</td>
+                            <td>:</td>
+                            <td><span id="fractionResult">00</span></td>
+                        </tr>                      
+                    </table>
+                </div>
+            </div>            
+        </div>
+
+        <div class="author-intro">
+            <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
+        </div>
+
+    </div>
+
+    <script src="js/project-common-js.js"></script>
+    <script src="js/decimal-to-fraction-calculator.js"></script>  
+    
+</body>
+</html>
