@@ -9,43 +9,42 @@
     <title>Fraction Calculator</title>
 </head>
 <body>
-    <div class="container">
+    <div class="tool-container">
         <h1>Fraction Calculator</h1>
-        <div class="container-feild-group">
-            <div class="container-feild">             
-                
-                <div class="input-group">
-                    <input placeholder="Enter a decimal number"  type="number"  min="0" id="inputNumber" class="input-feild">
+        <div class="tool-container-feild-group">
+            <div class="tool-container-feild">             
+               
+                <div class="tool-input-group tool-fraction-input-group">
+                    <input placeholder="Decimal number"  type="number"  min="0" id="inputNumber" class="tool-input-feild">
+                    <label class="tool-input-label">=</label>
+                    <div class="tool-fraction-output">
+                        <div class="tool-fraction-output-topbottom">
+                            <span id="outputRumerator">?</span>
+                        </div>
+                        <div class="tool-fraction-divider"></div>
+                        <div class="tool-fraction-output-topbottom">
+                            <span id="outputDenominator">?</span>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="input-group">
-                    <button onclick="FractionCalculatorReset()" id="btnReset" class="btn btn-reset">Reset</button>
-                    <button onclick="FractionCalculation()" id="btnCalculator" class="btn btn-calculate">Calculate</button>
+                <div class="tool-input-group">
+                    <button onclick="ResetFractionCalculator()" id="btnReset" class="tool-btn tool-btn-reset">Reset</button>
+                    <button onclick="CalculateFraction()" id="btnCalculator" class="tool-btn tool-btn-calculate">Calculate</button>
                 </div> 
             </div>
 
-            <div class="container-feild">              
+            <div class="tool-container-feild">              
                 
-                <div id="OutputInfo" class="output-information output-box">
+                <div id="OutputInfo" class="tool-output-information tool-output-box">
                     <ul>
                         <li>You have to input a decimal number.</li>
                     </ul>
                 </div>
-                
-                <div id="OutputResult" class="output-results output-box">
-                    <h2>Result</h2>
-                    <table class="output-table">
-                        <tr>
-                            <td>Fraction Number</td>
-                            <td>:</td>
-                            <td><span id="fractionResult">00</span></td>
-                        </tr>                      
-                    </table>
-                </div>
             </div>            
         </div>
 
-        <div class="author-intro">
+        <div class="tool-author-intro">
             <p>Develop By <i><a href="https://www.linkedin.com/in/kamrul-hasan100" target="_blank">Kamrul Hasan</a></i> & Powered By <i><a href="https://www.insidethediv.com/" target="_blank">InsideTheDiv</a></i></p>
         </div>
 

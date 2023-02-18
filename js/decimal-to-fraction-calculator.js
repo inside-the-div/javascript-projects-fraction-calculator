@@ -1,6 +1,4 @@
-_cmnHideElement("OutputResult");
-
-function FractionCalculatorFormValidate()
+function ValidateFractionCalculatorForm()
 {
     RemoveAllErrorMessage();
     var inputNumber = document.getElementById("inputNumber").value;
@@ -14,9 +12,10 @@ function FractionCalculatorFormValidate()
     return true;
 }
 
-function FractionCalculatorReset()
+function ResetFractionCalculator()
 {
-    document.getElementById("fractionResult").innerHTML= "0/0";
+    document.getElementById("outputRumerator").innerHTML = "?";
+    document.getElementById("outputDenominator").innerHTML = "?";
     document.getElementById("inputNumber").value= "";
 
     RemoveAllErrorMessage();
@@ -25,18 +24,15 @@ function FractionCalculatorReset()
     _cmnShowElement("OutputInfo", "flex");
 }
 
-function FractionCalculation()
+function CalculateFraction()
 {
-    if(FractionCalculatorFormValidate())
+    if(ValidateFractionCalculatorForm())
     {
         var inputNumber = Number(document.getElementById("inputNumber").value);
         
         var result = decimalToFraction(inputNumber);
-        document.getElementById("fractionResult").innerHTML= result;
-
-        //result div show
-        _cmnHideElement("OutputInfo");
-        _cmnShowElement("OutputResult", "flex");
+        document.getElementById("outputRumerator").innerHTML = result.toString().split('/')[0];
+        document.getElementById("outputDenominator").innerHTML = result.toString().split('/')[1];  
     }
 }
 
@@ -55,16 +51,8 @@ function decimalToFraction(decimal)
     // Simplify fraction
     numerator /= factor;
     denominator /= factor;
-    if((numerator % denominator) == 0)
-    {
-        return numerator + "/" + denominator;
-    }
-    else
-    {
-        var fullNumber =  Math.floor(numerator / denominator);
-        numerator = numerator % denominator;
-        return fullNumber +"("+ numerator + "/" + denominator +")";
-    }    
+   
+    return numerator + "/" + denominator;    
 }
 
 // Helper function to find greatest common factor
