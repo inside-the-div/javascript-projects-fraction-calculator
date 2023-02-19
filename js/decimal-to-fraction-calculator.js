@@ -3,9 +3,9 @@ function ValidateFractionCalculatorForm()
     _cmnRemoveAllErrorMessage();
     var inputNumber = document.getElementById("inputNumber").value;
 
-    if(_cmnIsInputFieldEmpty("inputNumber") || (isNaN(inputNumber) && inputNumber <= 0))
+    if(inputNumber == "" || (!isNaN(inputNumber) && inputNumber <= 0))
     {
-        _cmnShowErrorMessageBottomOfTheInputFiled("inputNumber", "Enter valid decimal number.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("inputNumber", "Enter valid number.");
         return false;
     }
     
@@ -14,11 +14,13 @@ function ValidateFractionCalculatorForm()
 
 function ResetFractionCalculator()
 {
-    document.getElementById("outputRumerator").innerHTML = "?";
-    document.getElementById("outputDenominator").innerHTML = "?";
-    document.getElementById("inputNumber").value= "";
+    if(confirm("Are you sure want to reset the calculator?")){
+        document.getElementById("outputNumerator").innerHTML = "?";
+        document.getElementById("outputDenominator").innerHTML = "?";
+        document.getElementById("inputNumber").value= "";
 
-    _cmnRemoveAllErrorMessage();
+        _cmnRemoveAllErrorMessage();
+    }
 }
 
 function CalculateFraction()
@@ -28,7 +30,7 @@ function CalculateFraction()
         var inputNumber = Number(document.getElementById("inputNumber").value);
         
         var result = decimalToFraction(inputNumber);
-        document.getElementById("outputRumerator").innerHTML = result.toString().split('/')[0];
+        document.getElementById("outputNumerator").innerHTML = result.toString().split('/')[0];
         document.getElementById("outputDenominator").innerHTML = result.toString().split('/')[1];  
     }
 }
@@ -43,7 +45,7 @@ function decimalToFraction(decimal)
     let denominator = Math.pow(10, decimalPlaces);
 
     // Find greatest common factor of numerator and denominator
-    let factor = gcd(numerator, denominator);
+    let factor = _cmnGCD(numerator, denominator);
 
     // Simplify fraction
     numerator /= factor;
@@ -51,14 +53,3 @@ function decimalToFraction(decimal)
    
     return numerator + "/" + denominator;    
 }
-
-// Helper function to find greatest common factor
-function gcd(a, b) 
-{
-    if (b == 0) {
-        return a;
-    } else {
-        return gcd(b, a % b);
-    }
-}
-  

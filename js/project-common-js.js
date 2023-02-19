@@ -27,51 +27,12 @@ function _cmnShowErrorMessageBottomOfTheInputFiled(fieldID,errorMessage)
     inputField.parentNode.insertBefore(errorMessageElement, inputField.nextSibling); // set the error message uder the error feild
 }
 
-function _cmnIsInputFieldEmpty(feildId)
+// Helper function to find greatest common factor
+function _cmnGCD(a, b) 
 {
-    var inputField = document.getElementById(feildId);
-    if(inputField.value == "") // check the feild empty or not
-    {
-        return true;
-    }
-
-    return false;
-}
-// check the year leap year or not
-function _cmnLeapYear(BirthYear)
-{
-    if (BirthYear % 4 == 0)
-    {
-        if (BirthYear % 100 != 0)
-        {
-            return true;
-        }
-        else
-        {
-            if (BirthYear % 400 == 0)
-            {
-                return true;
-            }
-        }
-    }
-
-    return false;    
-}
-
-function _cmnHideElement(elementId)
-{
-    var selectedDisplayValue = document.getElementById(elementId).style.display;
-    if(selectedDisplayValue != 'none')
-    {
-        document.getElementById(elementId).style.display = "none";
-    }
-}
-
-function _cmnShowElement(elementId, displayName)
-{
-    var selectedDisplayValue = document.getElementById(elementId).style.display;
-    if(selectedDisplayValue != displayName)
-    {
-        document.getElementById(elementId).style.display = displayName;
+    if (b == 0) {
+        return a;
+    } else {
+        return _cmnGCD(b, a % b);
     }
 }
