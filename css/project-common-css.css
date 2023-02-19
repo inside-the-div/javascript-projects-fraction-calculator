@@ -29,6 +29,7 @@ body{
 }
 .tool-container-feild-group{
     display: flex;
+    justify-content: center;
     width: 98%;
 }
 .tool-container-feild{
