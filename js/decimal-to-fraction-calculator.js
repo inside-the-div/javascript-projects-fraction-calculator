@@ -1,11 +1,11 @@
 function ValidateFractionCalculatorForm()
 {
-    RemoveAllErrorMessage();
+    _cmnRemoveAllErrorMessage();
     var inputNumber = document.getElementById("inputNumber").value;
 
-    if(IsInputFieldEmpty("inputNumber") || (isNaN(inputNumber) && inputNumber <= 0))
+    if(_cmnIsInputFieldEmpty("inputNumber") || (isNaN(inputNumber) && inputNumber <= 0))
     {
-        ShowErrorMessageBottomOfTheInputFiled("inputNumber", "Enter valid decimal number.");
+        _cmnShowErrorMessageBottomOfTheInputFiled("inputNumber", "Enter valid decimal number.");
         return false;
     }
     
@@ -18,7 +18,7 @@ function ResetFractionCalculator()
     document.getElementById("outputDenominator").innerHTML = "?";
     document.getElementById("inputNumber").value= "";
 
-    RemoveAllErrorMessage();
+    _cmnRemoveAllErrorMessage();
 
     _cmnHideElement("OutputResult");
     _cmnShowElement("OutputInfo", "flex");
