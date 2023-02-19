@@ -19,8 +19,7 @@ function ResetFractionCalculator()
     document.getElementById("inputNumber").value= "";
 
     _cmnRemoveAllErrorMessage();
-
-    _cmnHideElement("OutputResult");
+    
     _cmnShowElement("OutputInfo", "flex");
 }
 

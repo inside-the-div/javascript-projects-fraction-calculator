@@ -1,6 +1,7 @@
 #inputNumber{
-    min-width:120px;
+    min-width:175px;
     height: 60px;
+    font-size: 20px;
 }
 .tool-input-label{
     font-size: 60px;
@@ -29,4 +30,7 @@
 .tool-fraction-output-topbottom{
     display: flex;
     justify-content: center;
+}
+.tool-error-message{
+    left: 70px;
 }
