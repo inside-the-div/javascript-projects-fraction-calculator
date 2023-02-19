@@ -29,13 +29,14 @@ function CalculateFraction()
     {
         var inputNumber = Number(document.getElementById("inputNumber").value);
         
-        var result = decimalToFraction(inputNumber);
-        document.getElementById("outputNumerator").innerHTML = result.toString().split('/')[0];
-        document.getElementById("outputDenominator").innerHTML = result.toString().split('/')[1];  
+        var fractionObj = numberToFraction(inputNumber);
+
+        document.getElementById("outputNumerator").innerHTML = fractionObj.numerator;
+        document.getElementById("outputDenominator").innerHTML = fractionObj.denominator;
     }
 }
 
-function decimalToFraction(decimal) 
+function numberToFraction(decimal) 
 {
     // Count number of digits after decimal point
     let decimalPlaces = (decimal.toString().split('.')[1] || '').length;
@@ -50,6 +51,11 @@ function decimalToFraction(decimal)
     // Simplify fraction
     numerator /= factor;
     denominator /= factor;
+
+    var fractionObj = {
+        numerator:numerator,
+        denominator:denominator
+    };
    
-    return numerator + "/" + denominator;    
+    return fractionObj;  
 }
