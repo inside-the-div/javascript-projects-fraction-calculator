@@ -1,5 +1,5 @@
 #inputNumber{
-    min-width:70%;
+    width:70%;
     height: 60px;
     font-size: 20px;
 }
@@ -33,4 +33,7 @@
 }
 .tool-error-message{
     left: 10px;
+}
+.tool-container-feild {
+    min-width: 50%;
 }
