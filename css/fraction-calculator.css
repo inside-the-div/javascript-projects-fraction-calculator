@@ -34,6 +34,12 @@
 .tool-error-message{
     left: 10px;
 }
-.tool-container-feild {
+.tool-container-feild-fraction {
+    display: block;
     min-width: 50%;
+    padding: 10px;
+    margin: 5px;
+    background: rgb(154, 197, 163);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
